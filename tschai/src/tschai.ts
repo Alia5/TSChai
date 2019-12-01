@@ -1,7 +1,7 @@
-import * as ts from "typescript";
-import { writeFileSync } from "fs";
-import { ChaiPrinter } from "./chaiprinter/chaiprinter";
-import { resolve } from "path";
+import * as ts from 'typescript';
+import { writeFileSync } from 'fs';
+import { ChaiPrinter } from './chaiprinter/chaiprinter';
+import { resolve } from 'path';
 
 function main() {
     // hardcode our input file
@@ -19,7 +19,7 @@ function main() {
             return (context) => {
                 const visit: ts.Visitor = (node) => {
                     if (ts.isCallExpression(node)) {
-                        if (node.expression.getText(source) === 'console.log') {                            
+                        if (node.expression.getText(source) === 'console.log') {
                             return ts.createCall(
                                     ts.createIdentifier('print'),
                                     undefined,
@@ -30,8 +30,8 @@ function main() {
                     }
                     return ts.visitEachChild(node, (child) => visit(child), context);
                 };
-            
-                return node => ts.visitNode(node, visit);
+
+                return (node) => ts.visitNode(node, visit);
             };
         };
 
@@ -39,13 +39,13 @@ function main() {
         const transRes = ts.transform(source,[consoleLogTransFormer()]);
 
         transRes.transformed[0].forEachChild((node) => {
-            //console.log(syntaxToKind(node.kind));
+            // console.log(syntaxToKind(node.kind));
             const transpiled = ChaiPrinter.printNode(node);
             if (transpiled.length > 0) {
                 console.log(transpiled);
                 writeFileSync(resolve('../testFiles/out/testFile.chai'), transpiled);
             }
-            //console.log(printer.printNode(ts.EmitHint.Unspecified, transRes.transformed[0], source));
+            // console.log(printer.printNode(ts.EmitHint.Unspecified, transRes.transformed[0], source));
         });
     }
 }

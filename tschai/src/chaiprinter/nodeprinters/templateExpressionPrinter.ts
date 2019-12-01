@@ -7,7 +7,7 @@ const print = (node: ts.TemplateExpression, printer: ts.Printer, source: ts.Sour
     return printRes
         .replace(/\"/g, '\\"')
         .replace(/^`/g, '"')
-        .replace(/`$/g, '"')
+        .replace(/`$/g, '"');
 };
 
 nodePrinters[ts.SyntaxKind.TemplateExpression] = print;

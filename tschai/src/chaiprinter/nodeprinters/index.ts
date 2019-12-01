@@ -4,9 +4,9 @@ import { resolve } from 'path';
 
 const dir = resolve(__dirname);
 readdirSync(dir).forEach((file) => {
-    if (file !== 'index.ts' && file != 'nodeprinter.ts') {
+    if (file !== 'index.ts' && file !== 'nodeprinter.ts') {
         require(dir + '/' + file);
     }
 });
 
-export default nodePrinters; 
+export default nodePrinters;

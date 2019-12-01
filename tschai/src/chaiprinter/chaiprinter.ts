@@ -1,10 +1,10 @@
-import * as ts from "typescript";
-import nodePrinters from "./nodeprinters";
+import * as ts from 'typescript';
+import nodePrinters from './nodeprinters';
 
 export interface ChaiNodePrinters {
     [syntaxKind: number]: (node: ts.Node|any, /* cannot get to work with generics... */
-                            tsPrinter: ts.Printer,
-                            source: ts.SourceFile) => string;
+                           tsPrinter: ts.Printer,
+                           source: ts.SourceFile) => string;
 }
 
 export namespace ChaiPrinter {
@@ -21,7 +21,7 @@ export namespace ChaiPrinter {
 
     const invokeNodePrinter = (node: ts.Node): string => {
         return nodePrinters[node.kind](node, printer, source);
-    }
+    };
 
     export const printNode = (node: ts.Node|undefined): string => {
         if (node) {
@@ -31,5 +31,5 @@ export namespace ChaiPrinter {
             return printer.printNode(ts.EmitHint.Unspecified, node, source);
         }
         return '';
-    }
-} 
+    };
+}
