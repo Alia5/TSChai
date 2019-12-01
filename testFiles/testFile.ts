@@ -37,5 +37,22 @@ function testFun(testParam: string, haveAnother): number {
 
     const shortArrowFun = (param) => param;
 
+    const testDict = {
+        some: 'awesome',
+        dictionary: true,
+    };
+
+
+    // // c-style for loops
+    // for (var i = 0; i < 100; ++i) { 
+    //     console.log(i);
+    // }
+
+    // // while
+    // while (false) { /* do something */ }
+
+    // // ranged for
+    // for (const x in [1,2,3]) { console.log(i); }
+
     return 42;
 }
