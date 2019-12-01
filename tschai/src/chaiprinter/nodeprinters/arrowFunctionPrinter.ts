@@ -19,7 +19,7 @@ const print = (node: ts.ArrowFunction, printer: ts.Printer, source: ts.SourceFil
         res += ChaiPrinter.printNode(node.body);
         res += '\n}'
     } else {
-        res += '{ return ' + (node.body as ts.Identifier).text + '; }';
+        res += '{ return ' + ChaiPrinter.printNode(node.body) + '; }';
     }
     return res;
 };
