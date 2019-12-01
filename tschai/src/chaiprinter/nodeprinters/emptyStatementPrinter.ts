@@ -6,3 +6,6 @@ const print = (node: ts.Node): string => {
 };
 
 nodePrinters[ts.SyntaxKind.EmptyStatement] = print;
+nodePrinters[ts.SyntaxKind.InterfaceDeclaration] = print;
+nodePrinters[ts.SyntaxKind.TypeAliasDeclaration] = print;
+nodePrinters[ts.SyntaxKind.ImportDeclaration] = print;
