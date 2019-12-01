@@ -1,17 +1,12 @@
 import { nodePrinters } from './nodeprinter';
+import { readdirSync } from 'fs';
+import { resolve } from 'path';
 
-require('./arrowFunctionPrinter');
-require('./binaryExpressionPrinter');
-require('./blockPrinter');
-require('./emptyStatementPrinter');
-require('./equalsEqualsEqualsTokenPrinter');
-require('./exclamationEqualsEqualsTokenPrinter');
-require('./expressionStatementPrinter');
-require('./functionDeclarationPrinter');
-require('./ifStatementPrinter');
-require('./returnStatementPrinter');
-require('./stringLiteralPrinter');
-require('./templateExpressionPrinter');
-require('./variableStatementPrinter');
+const dir = resolve(__dirname);
+readdirSync(dir).forEach((file) => {
+    if (file !== 'index.ts' && file != 'nodeprinter.ts') {
+        require(dir + '/' + file);
+    }
+});
 
 export default nodePrinters;
