@@ -1,9 +1,26 @@
 {
+  "name": "TSChai",
+  "version": "0.0.1",
+  "description": "Typescript 2 Chaiscript Transpiler",
+  "author": {
+    "name": "Peter Repukat",
+    "email": "orly.alia5@gmail.com",
+    "url": "https://behind.flatspot.pictures"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "license": "Apache License 2.0",
+  "main": "./dist/tschai.js",
+  "bin": {
+    "tschai": "./dist/tschai.js"
+  },
   "devDependencies": {
     "@types/node": "^12.12.14",
     "ts-node": "^8.5.4"
   },
   "dependencies": {
+    "glob": "^7.1.6",
     "typescript": "^3.7.2"
   }
 }

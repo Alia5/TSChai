@@ -1,0 +1,17 @@
+{
+  "name": "testfiles",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tschai"
+  },
+  "main": "./src/testFile.ts",
+  "author": "",
+  "dependencies": {
+    "TSChai": "file:../tschai"
+  },
+  "devDependencies": {
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2"
+  }
+}

@@ -11,11 +11,11 @@ export namespace ChaiPrinter {
 
     let source: ts.SourceFile;
     let printer: ts.Printer;
-    export const init = (source_: ts.SourceFile) => {
+    export const init = (source_: ts.SourceFile, config: any) => {
         source = source_;
         printer = ts.createPrinter({
             omitTrailingSemicolon: true,
-            removeComments: true
+            removeComments: config.compilerOptions.removeComments ? config.compilerOptions.removeComments : true
         });
     };
 

@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"rootDir": "./src",
+		"outDir": "./out",
+		"target": "chai-6.0.0",
+		"module": "commonjs",
+		"noImplicitAny": false,
+		"lib": [
+			"chai"
+		],
+		"declaration": false,
+		"removeComments": true
+	},
+	"include": [
+		"src/**/*"
+	],
+	"exclude": [
+		"node_modules",
+		"out",
+		"**/*.spec.ts"
+	]
+}

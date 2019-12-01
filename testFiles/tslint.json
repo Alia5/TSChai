@@ -12,7 +12,7 @@
         ],
         "no-duplicate-variable": true,
         "no-debugger": true,
-        "no-console": false,
+        "no-console": true,
         "interface-name": false,
         "member-ordering": false,
         "one-variable-per-declaration": false,
@@ -20,6 +20,7 @@
             true,
             140
         ],
+        "member-access": false,
         "max-classes-per-file": false,
         "ordered-imports": false,
         "object-literal-sort-keys": false,
@@ -31,7 +32,7 @@
         "no-namespace": false,
         "quotemark": [
             true,
-            "single",
+            "double",
             "avoid-template"
         ],
         "object-literal-shorthand": false,
@@ -71,7 +72,9 @@
                     "typeLiterals": "ignore"
                 }
             }
-        ]
+        ],
+        "curly": true,
+        "no-construct": true
     },
     "rulesDirectory": []
 }

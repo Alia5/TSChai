@@ -1,18 +1,36 @@
 {
-	"version": "0.2.0",
-	"configurations": [
-		{
-			"name": "Debug tschai",
-			"type": "node",
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug tschai",
+            "type": "node",
+            "request": "launch",
+            "args": [
+                "${workspaceRoot}/tschai/src/tschai.ts"
+            ],
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "cwd": "${workspaceRoot}/tschai",
+            "protocol": "inspector",
+            "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "TS_NODE_IGNORE": "false"
+            }
+        },
+        {
+            "name": "Debug tschai with testfiles",
+            "type": "node",
 			"request": "launch",
-			"args": ["${workspaceRoot}/tschai/src/tschai.ts"],
-			"runtimeArgs": ["-r", "ts-node/register"],
-			"cwd": "${workspaceRoot}/tschai",
-			"protocol": "inspector",
-			"internalConsoleOptions": "openOnSessionStart",
-			"env": {
-				"TS_NODE_IGNORE": "false"
-			}
-		}
-	]
+			"runtimeExecutable": "node",
+			"args": ["node_modules/.bin/tschai"],
+            "cwd": "${workspaceRoot}/testFiles",
+            "protocol": "inspector",
+            "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "TS_NODE_IGNORE": "false"
+            }
+        }
+    ]
 }
