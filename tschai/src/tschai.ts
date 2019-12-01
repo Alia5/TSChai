@@ -37,16 +37,16 @@ function main() {
 
         ChaiPrinter.init(source);
         const transRes = ts.transform(source,[consoleLogTransFormer()]);
-
+        const transpiled: string[] = [];
         transRes.transformed[0].forEachChild((node) => {
-            // console.log(syntaxToKind(node.kind));
-            const transpiled = ChaiPrinter.printNode(node);
-            if (transpiled.length > 0) {
-                console.log(transpiled);
-                writeFileSync(resolve('../testFiles/out/testFile.chai'), transpiled);
+            const res = ChaiPrinter.printNode(node);
+            if (res.length > 0) {
+                console.log(res);
+                transpiled.push(res);
             }
-            // console.log(printer.printNode(ts.EmitHint.Unspecified, transRes.transformed[0], source));
         });
+        writeFileSync(resolve('../testFiles/out/testFile.chai'), transpiled.join('\n'));
+
     }
 }
 main();
