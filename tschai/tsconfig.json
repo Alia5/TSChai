@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        // "noUnusedLocals": true,
+        // "noUnusedParameters": true,
+        "noImplicitAny": false,
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "target": "es2020",
+        "lib": ["es2020"],
+        "module": "commonjs",
+        "stripInternal": true,
+        "moduleResolution": "node"
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
