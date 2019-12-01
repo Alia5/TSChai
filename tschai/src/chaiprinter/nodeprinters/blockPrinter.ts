@@ -6,7 +6,7 @@ const print = (node: ts.Block, printer: ts.Printer, source: ts.SourceFile): stri
     let res: string = '    ' + node.statements
     .map((child) => ChaiPrinter.printNode(child))
     .filter((str) => str.length > 0)
-    .join('\n').replace(/\n/g, '    \n');
+    .join('\n').replace(/\n/g, '\n    ');
     return res;
 };
 
