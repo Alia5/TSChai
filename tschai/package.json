@@ -7,8 +7,13 @@
     "email": "orly.alia5@gmail.com",
     "url": "https://behind.flatspot.pictures"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Alia5/TSChai"
+  },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "build-dev": "tsc --watch --inlineSourcemap"
   },
   "license": "Apache License 2.0",
   "main": "./dist/tschai.js",
