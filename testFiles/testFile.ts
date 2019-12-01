@@ -1,5 +1,9 @@
 function testFun(testParam: string, haveAnother): number {
 
+    const testiTest = [
+        (arg) => arg + 12,
+    ];
+
     if (haveAnother > 10) {
         console.log('greater 10');
     } else if (haveAnother < 0
@@ -12,7 +16,7 @@ function testFun(testParam: string, haveAnother): number {
     console.error('test', 42);
     console.log(testParam);
     const arrowFun = (param: number) => {
-        const someVar = 'number is: ' + param;
+        const someVar = 67 + param;
         console.log(someVar);
     };
     arrowFun(6756);
@@ -41,6 +45,16 @@ function testFun(testParam: string, haveAnother): number {
         some: 'awesome',
         dictionary: true,
     };
+
+    const testArray = [
+        'escape me: "',
+        "don't to shit",
+        `wtf ${12}`,
+        24,
+        (arg) => arg + 12,
+        shortArrowFun,
+        arrowFun(12)
+    ];
 
 
     // // c-style for loops

@@ -9,4 +9,4 @@ readdirSync(dir).forEach((file) => {
     }
 });
 
-export default nodePrinters;
+export default nodePrinters; 
